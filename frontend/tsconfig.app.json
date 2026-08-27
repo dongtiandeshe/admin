@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    // 允许你指定一个文件，用于存储增量编译信息，从而加快速度构建更大规模的TypeScript代码库。
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    // 指定编译后的 JavaScript 代码要符合哪个 ECMAScript 版本标准
+    "target": "ES2022",
+    // 为即将到来的类字段特性启用更严格的行为
+    "useDefineForClassFields": true,
+    // 这个和target 配合使用，指定要包含在编译中的库文件，用作类型检查
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    // 指定生成的 JavaScript 代码使用的模块系统，比如决定你的 import/export 被编译成什么格式
+    // ESNext保持原样，CommonJs会被转换成require/module.exports
+    "module": "ESNext",
+    // 指定要包含在编译中的类型声明文件
+    "types": ["vite/client"],
+    // 跳过库文件的类型检查，加快编译速度
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    // 指定模块解析策略，用于确定如何查找导入（import）的模块
+    // bundler 适用于现代打包工具，如 Vite 和 Webpack。node\node16\nodenext 适用于 Node.js 环境
+    "moduleResolution": "bundler",
+    // 允许导入带有 .ts 扩展名的模块
+    "allowImportingTsExtensions": true,
+    // 保持模块语法不变，避免编译器对模块语法进行任何转换，ts会省略导入的类型文件语句，在老项目中需慎用
+    "verbatimModuleSyntax": true,
+    // 强制模块检测，即使没有显式的导出或导入语句，文件也会被视为模块
+    "moduleDetection": "force",
+    // 只检查类型，不生产任何文件。一般打包工具都设为true，但是nodejs项目纯后端就是false
+    "noEmit": true,
+    // 告诉 TypeScript 如何转换 JSX 语法
+    "jsx": "react-jsx",
+
+    /* Linting */
+    // 启用所有严格类型检查选项
+    "strict": true,
+    // 不允许未使用的局部变量
+    "noUnusedLocals": true,
+    // 不允许未使用的函数参数
+    "noUnusedParameters": true,
+    // 仅可擦除语法
+    "erasableSyntaxOnly": true,
+    // 防止 switch 语句中的贯穿情况，避免缺失break，return，thorw等终止语句
+    "noFallthroughCasesInSwitch": true,
+    // 防止导入可能引发副作用的模块，除非明确使用它们
+    "noUncheckedSideEffectImports": true,
+    // 不允许不可达代码
+    "allowUnreachableCode": false,
+    // 不允许未使用的标签
+    "allowUnusedLabels": false
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,11 @@
+{
+  // 指定程序中包含的的文件允许列表
+  "files": [],
+  "references": [
+    // 这两个文件的区别是什么呢？
+    // 前端应用
+    { "path": "./tsconfig.app.json" },
+    // nodejs应用
+    { "path": "./tsconfig.node.json" }
+  ]
+}
