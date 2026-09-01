@@ -5,6 +5,26 @@ LastEditTime: 2026-08-31 09:59:34
 LastEditors: Duanyt
 Description: 
 '''
+# python中的集合类似与js的map，但是用{}包裹，集合中不能存放可变的元素，可以嵌套不可变的元素
+s1 = {10,58,92,5,67,16}         # 可变集合
+s11 = set()     # 空集合  不是使用{}定义，这样是直接定义空字典
+s2 = frozenset({'你好', 'hello', '侬好'})    # 不可变集合
+s22 = frozenset()       # 定义空不可变集合
+print(type(s1))
+print(type(s2))
+
+# 增
+s1.add(30)
+# 改
+s1.update({33,77,11,88,55})
+# 删
+# 只能删除存在的元素
+s1.remove(33)
+s1.discard(33)
+# 删除任意元素
+s1.pop()
+# 清空集合
+s1.clear()
 s1 = {10,50,42,62,8,4,3,5}
 # 集合的改使用remove+add方法来进行  
 
