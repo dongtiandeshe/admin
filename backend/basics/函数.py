@@ -1,7 +1,7 @@
 '''
 Author: Duanyt
 Date: 2026-08-28 16:00:10
-LastEditTime: 2026-08-28 16:50:22
+LastEditTime: 2026-09-01 14:03:25
 LastEditors: Duanyt
 Description: 
 '''
@@ -31,14 +31,36 @@ hello('snake', 18, habits='看书')
 list = [1,2,3,5,86,45]
 tuple = ('你好','北京')
 
+# 打包接收参数
 def test(*args):
     print(f'{args},{type(args)}')
 
 def test1(**kwargs):
     print(f'{kwargs},{type(kwargs)}')
 
+# 解包传递参数
 test(*list)
 test(*tuple)    
 
 
-# python中的集合类似与js的map，但是用{}包裹 
+# python中的集合类似与js的map，但是用{}包裹         
+
+
+
+# 高阶函数：接收的参数是函数或者返回的值是函数      
+def info(msg):
+    return '[提示]：' + msg
+
+def warn(msg):
+    return '[警告]：' + msg
+
+def log(func, text):
+    print(func(text))
+
+log(info, '文件保存成功')       
+
+
+# 匿名函数  使用场景：当一个函数只用一次，做一点点小事，使用匿名函数会更简洁
+# lambda:关键字，定义匿名函数，text参数，'我是'+text表达式
+printInfo = lambda text: '我是'+text
+print(printInfo('段'))
