@@ -1,7 +1,7 @@
 '''
 Author: Duanyt
 Date: 2026-08-27 16:04:42
-LastEditTime: 2026-09-11 15:06:07
+LastEditTime: 2026-09-14 11:23:23
 LastEditors: Duanyt
 Description: 
 '''
@@ -47,6 +47,19 @@ async def middleware2(request, call_next):
     response = await call_next(request)
     print('中间件2 end')
     return response
+
+
+# 依赖项，代码逻辑复用，减少代码量
+# 1 创建依赖性
+async def common_params(
+        skip: int = Query(default=0, ge=0),
+        limit: int = Query(default=10, le=60)
+):
+    return {"skip": skip, "limit": limit}
+# 2.在路由上面使用Depends注入依赖性
+@app.get("/users/list")
+async def get_users_list(commons=Depends(common_params)):
+    return commons
 
 # 路径参数
 # 路径参数不能设置默认值

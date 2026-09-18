@@ -1,7 +1,7 @@
 '''
 Author: Duanyt
 Date: 2026-08-27 16:07:59
-LastEditTime: 2026-08-27 16:12:15
+LastEditTime: 2026-09-16 15:48:12
 LastEditors: Duanyt
 Description: 
 '''
@@ -37,5 +37,7 @@ async def get_db() -> AsyncSession:
     async with AsyncSessionLocal() as session:
         try:
             yield session
+        except:
+            session.rollback()
         finally:
             await session.close()

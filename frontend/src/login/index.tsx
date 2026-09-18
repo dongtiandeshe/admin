@@ -1,13 +1,18 @@
+import { Navigate } from "react-router";
 import "./login.css";
 
 /*
  * @Author: Duanyt
  * @Date: 2026-08-27 14:45:54
- * @LastEditTime: 2026-08-27 15:29:59
+ * @LastEditTime: 2026-09-15 08:52:21
  * @LastEditors: Duanyt
  * @Description:
  */
 export default function Login() {
+  const token = localStorage.getItem('token');
+  if (token) {
+    return <Navigate to="/" replace />;
+  }
   return (
     <div className="login-container">
       <h2>登录</h2>
