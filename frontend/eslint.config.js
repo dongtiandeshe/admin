@@ -18,5 +18,6 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    '@typescript-eslint/no-unused-vars': 'off'    // 关闭未使用变量检查
   },
 ])

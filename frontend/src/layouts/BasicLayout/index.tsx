@@ -24,6 +24,11 @@ export default function BasicLayout() {
               用户管理
             </Link>
           </li>
+          <li>
+            <Link to="/practice" style={{ color: "#fff" }}>
+              学习笔记
+            </Link>
+          </li>
         </ul>
       </div>
       <div style={{ flex: 1, padding: "20px", background: "#f0f2f5" }}>

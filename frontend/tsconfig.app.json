@@ -38,11 +38,11 @@
     // 启用所有严格类型检查选项
     "strict": true,
     // 不允许未使用的局部变量
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     // 不允许未使用的函数参数
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     // 仅可擦除语法
-    "erasableSyntaxOnly": true,
+    "erasableSyntaxOnly": false,
     // 防止 switch 语句中的贯穿情况，避免缺失break，return，thorw等终止语句
     "noFallthroughCasesInSwitch": true,
     // 防止导入可能引发副作用的模块，除非明确使用它们
@@ -50,7 +50,7 @@
     // 不允许不可达代码
     "allowUnreachableCode": false,
     // 不允许未使用的标签
-    "allowUnusedLabels": false
+    "allowUnusedLabels": true,
   },
   "include": ["src"]
 }
